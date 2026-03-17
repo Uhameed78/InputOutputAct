@@ -18,34 +18,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
         val clickBtn = findViewById<Button>(R.id.clickBtn)
         val name = findViewById<EditText>(R.id.name)
         val world = findViewById<TextView>(R.id.world)
-        clickBtn?.setOnClickListener {
-            world.text = "Hello,${name.text}!"
-            if (name.text.toString() == "Ben" || name.text.toString() == "Benedict") {
-                world.text = "Howzit, ${name.text}!"
-            } else {
-                world.text = "Hello, ${name.text}!"
-            }
-            val swUlu = findViewById<Switch>(R.id.swUlu)
-            val greeting: String = if (swUlu.isChecked) {
-                "Sawubona, ${name.text}!"
-            } else {
-                "Hello, ${name.text}!"
-            }
-            world.text = greeting
-            var zulu: Boolean = swUlu.isChecked
-            if (zulu) {
-                val greeting = "Sawubona, ${name.text}!"
-            } else {
-                val greeting = "Hello, ${name.text}!"
-            Toast.makeText(
-                this@MainActivity,
-                "Button clicked", Toast.LENGTH_SHORT
-            ).show()
+        val swUlu = findViewById<Switch>(R.id.swUlu) // move outside the click listener
 
+        clickBtn.setOnClickListener {
+            val nameText = name.text.toString()
+
+            world.text = when {
+                swUlu.isChecked -> "Sawubona, $nameText!"
+                nameText == "Ben" || nameText == "Benedict" -> "Howzit, $nameText!"
+                else -> "Hello, $nameText!"
+            }
+
+            Toast.makeText(this@MainActivity, "Button clicked", Toast.LENGTH_SHORT).show()
+        }
                 ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
                     val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
                     v.setPadding(
@@ -59,5 +47,4 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-    }
-}
+
