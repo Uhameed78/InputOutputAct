@@ -13,7 +13,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("SetTextI18n", "UseSwitchCompatOrMaterialCode")
+    @SuppressLint("SetTextI18n", "UseSwitchCompatOrMaterialCode", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -21,13 +21,13 @@ class MainActivity : AppCompatActivity() {
         val clickBtn = findViewById<Button>(R.id.clickBtn)
         val name = findViewById<EditText>(R.id.name)
         val world = findViewById<TextView>(R.id.world)
-        val swUlu = findViewById<Switch>(R.id.swUlu) // move outside the click listener
+        val gWitch = findViewById<Switch>(R.id.gWitch) // move outside the click listener
 
         clickBtn.setOnClickListener {
             val nameText = name.text.toString()
 
             world.text = when {
-                swUlu.isChecked -> "Sawubona, $nameText!"
+                gWitch.isChecked -> "Guten Tag, $nameText!"
                 nameText == "Ben" || nameText == "Benedict" -> "Howzit, $nameText!"
                 else -> "Hello, $nameText!"
             }
