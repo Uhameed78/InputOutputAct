@@ -10,43 +10,63 @@
 
     <TextView
         android:id="@+id/world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="143dp"
+        android:layout_height="55dp"
         android:fontFamily="@font/honk"
         android:text="Hello World!"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463"
+        tools:ignore="TextSizeCheck" />
 
     <EditText
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
-        android:layout_marginEnd="178dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="100dp"
         android:autofillHints=""
         android:ems="10"
         android:fontFamily="@font/honk"
         android:inputType="text"
         android:minHeight="48dp"
         android:text="Name"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText,LabelFor" />
 
     <Button
         android:id="@+id/clickBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="159dp"
+        android:layout_height="78dp"
         android:layout_marginTop="39dp"
-        android:layout_marginEnd="132dp"
+        android:layout_marginEnd="124dp"
         android:layout_marginBottom="269dp"
         android:fontFamily="@font/nabla"
         android:text="CLICK ME!!!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/world"
+        app:layout_constraintVertical_bias="0.0"
         tools:ignore="HardcodedText" />
+
+    <Switch
+        android:id="@+id/swUlu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:layout_marginEnd="148dp"
+        android:fontFamily="@font/nabla"
+        android:minHeight="48dp"
+        android:text="Zulu"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        tools:ignore="HardcodedText,UseSwitchCompatOrMaterialXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
