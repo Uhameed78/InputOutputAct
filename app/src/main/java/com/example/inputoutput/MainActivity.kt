@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             world.text = when {
                 gWitch.isChecked -> "Guten Tag, $nameText!"
                 nameText == "Ben" || nameText == "Benedict" -> "Howzit, $nameText!"
+                nameText =="Adolf" ||  nameText =="Adolf Hitler" -> "Sieg Heil, $nameText!"
                 else -> "Hello, $nameText!"
             }
 
